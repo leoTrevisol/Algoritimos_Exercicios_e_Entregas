@@ -10,7 +10,7 @@ grau substituído e imprima na tela o resultado, informando se ele foi aprovado 
  * Última modificação: 25.09.2024
  *
  * Observações:
- *
+ *  VOU TENTAR USAR PONTEIROS.
  */
 
 #include <stdio.h>
@@ -18,7 +18,27 @@ grau substituído e imprima na tela o resultado, informando se ele foi aprovado 
 
 int main()
 {
-    float notaProva;
+    char notaGrau[3],tipoGrau[3] = {'A','B','C'};
+    int count = 1;
+
+    while (count)
+    {
+        
+        printf("Calculadora de notas da Unisinos.\n\n");
+        printf("Grau %c: ",tipoGrau[i]);
+        scanf("%f",&notaGrau);
+        if (notaGrau < 0 || notaGrau > 10)
+        {
+            printf("Valor nao permitido!");
+            count = 0;
+        }else
+        {
+            
+        }
+        
+        
+    }
+    
 
     return 0;
 }
