@@ -45,4 +45,3 @@ float divisao(float dividendo, float divisor)
     resultado = dividendo / divisor;
     return resultado;
 }
-//ola

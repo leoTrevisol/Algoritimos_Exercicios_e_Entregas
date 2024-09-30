@@ -1,5 +1,5 @@
 /*
- * Programa: ex1.c
+ * Programa: ex3.c
  * Descrição: Encontrar o dobro de um número caso ele seja positivo e o seu triplo caso seja negativo, imprimindo
 o resultado.
  * Autor: Leonardo Trevisol
