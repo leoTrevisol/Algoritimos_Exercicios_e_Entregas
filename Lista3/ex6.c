@@ -20,6 +20,7 @@ que o programa venceu
 
 #define SIZE 6
 
+// fputs(parOuImpar,stdout);
 int jogoPar(int valor);
 int jogoImpar(int valor);
 int main()
