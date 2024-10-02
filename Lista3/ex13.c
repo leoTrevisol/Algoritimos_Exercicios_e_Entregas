@@ -15,28 +15,29 @@ grau substituído e imprima na tela o resultado, informando se ele foi aprovado 
 
 #include <stdio.h>
 
-
+float mediaParcial(float );
 int main()
 {
-    char notaGrau[3],tipoGrau[3] = {'A','B','C'};
-    int count = 1;
+    char tipoGrau[3] = {'A','B','C'};
+    float notaGrau[3];
+    int  count = 1;
 
     while (count)
     {
         
         printf("Calculadora de notas da Unisinos.\n\n");
-        printf("Grau %c: ",tipoGrau[i]);
-        scanf("%f",&notaGrau);
-        if (notaGrau < 0 || notaGrau > 10)
+
+        for (int i = 0; i < 2; i++)
         {
-            printf("Valor nao permitido!");
-            count = 0;
-        }else
+            printf("Grau %c: ",tipoGrau[i]);
+            scanf("%f",&notaGrau[i]);
+        if (notaGrau[i] < 0 || notaGrau[i] > 10)
         {
-            
+            printf("Valor nao permitido!\n");
+            i--;
         }
-        
-        
+        }
+        count = 0;
     }
     
 
