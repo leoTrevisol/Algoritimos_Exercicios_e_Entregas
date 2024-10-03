@@ -26,7 +26,7 @@ int main()
     float *pontGrau = notaGrau;
     // ou float *notaGrau = (float *)malloc(tamanho * sizeof(float));
     //  a diferenca eh que no primeiro eu ja tenho meu espaco de memoria preenchido com os dados que eu quero
-    //  e no segundo caso, mais otimizado, eu limpo o espaco de memoria antes de utiliza-lo, oq evita problemas de sobreescrever dados.
+    //  e no segundo caso, mais otimizado, eu limpo o espaco de memoria antes de utiliza-lo, oq evita problemas de sobrescrever dados.
     int count = 1;
 
     while (count)
