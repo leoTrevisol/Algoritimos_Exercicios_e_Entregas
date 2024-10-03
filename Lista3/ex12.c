@@ -1,5 +1,5 @@
 /*
- * Programa: ex6.c
+ * Programa: ex12.c
  * Descrição:A confederação brasileira de natação irá promover eliminatórias para o próximo mundial. Fazer um
 algoritmo que receba a idade de um nadador e imprima a sua categoria segundo a tabela a seguir:
 Categoria Idade
