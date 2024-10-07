@@ -1,5 +1,5 @@
 /*
- * Programa: ex13.c
+ * Programa: ex14.c
  * Descrição:Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade do
 conveniado considerando que todos pagam R$ 300 e mais um adicional (se tiver dependentes)
 conforme a seguinte tabela:
