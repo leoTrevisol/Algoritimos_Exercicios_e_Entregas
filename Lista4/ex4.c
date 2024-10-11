@@ -15,28 +15,58 @@ Números divisíveis por 3 no intervalo de 17 a 29:
  * Última modificação: 9.10.2024
  *
  * Observações:
- *
+ * - Usei ponteiros para treinar.
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-void calculoDivisiveis(int numero,int intervMenor,int intervMaior);
+int *calculoDivisiveis(int numero, int intervMenor, int intervMaior, int *size);
 int main()
 {
-   int numeroDivisor,intervalo1,intervalo2;
+   int numeroDivisor, intervalo1, intervalo2;
+   int *listaDivisores;
+   int tamanho;
 
    printf("Entre com o valor do divisor:");
-   scanf("%d",&numeroDivisor);
+   scanf("%d", &numeroDivisor);
    printf("Inicio do itervalo:");
-   scanf("%d",&intervalo1);
+   scanf("%d", &intervalo1);
    printf("Fim do itervalo:");
-   scanf("%d",&intervalo2);
-   calculoDivisiveis(numeroDivisor,intervalo1,intervalo2);
-return 0;
+   scanf("%d", &intervalo2);
+   listaDivisores = calculoDivisiveis(numeroDivisor, intervalo1, intervalo2, &tamanho);
+   printf("Numero divisiveis por %d no intervalo de %d a %d:\n", numeroDivisor, intervalo1, intervalo2);
+   for (int i = 0; i < tamanho; i++)
+   {
+      printf("%d ", listaDivisores[i]);
+   }
+   free(listaDivisores);
+   return 0;
 }
-void calculoDivisiveis(int numero,int intervMenor,int intervMaior){
+int *calculoDivisiveis(int numero, int intervMenor, int intervMaior, int *size)
+{
 
-   
+   int count = 0;
+   for (int i = intervMenor; i <= intervMaior; i++)
+   {
+      if (i % numero == 0)
+      {
+         count++;
+      }
+   }
+
+   int *vetorDivisores = (int *)malloc(count * sizeof(int));
+   *size = count;
+   int j = 0;
+   for (int i = intervMenor; i <= intervMaior; i++)
+   {
+
+      if (i % numero == 0)
+      {
+         vetorDivisores[j++] = i;
+      }
+   }
+
+   return vetorDivisores;
 }
