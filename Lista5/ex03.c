@@ -17,50 +17,58 @@ array com 6 posições e ao final imprima o percentual do resultado de cada face
 
 #define SIZE 6
 
-void percentagemDados(int qnt,int numb1,int numb2,int numb3,int numb4,int numb5,int numb6);
 int sorteioDado();
 int main()
 {
- 
-int qntdDado;
-printf("Digite a quantidade de vezes que desejas jogar o dado:");
-scanf("%d",&qntdDado);
-int d1 = 0,d2 = 0,d3 = 0,d4 = 0,d5 = 0,d6 = 0;
-int vetorDados[SIZE] = {d1,d2,d3,d4,d5,d6};
-for (int i = 0; i < qntdDado; i++)
-{
-   int valorDado = sorteioDado();
-   if (valorDado == 1)
-   {
-    d1++;
-   }else if (valorDado == 2)
-   {
-    d2++;
-   }else if (valorDado == 3)
-   {
-    d3++;
-   }else if (valorDado == 4)
-   {
-    d4++;
-   }else if (valorDado == 5)
-   {
-    d5++;
-   }else
-   {
-    d6++;
-   }
+    srand(time(0));
+
+    int nVezes;
+
+    int vetorDado[SIZE] = {0, 0, 0, 0, 0, 0};
+    printf("Digite o numero de vezes para o dado ser jogado:");
+    scanf("%d", &nVezes);
+
+    for (int i = 0; i < nVezes; i++)
+    {
+        int numeroSorteado = sorteioDado();
+        if (numeroSorteado == 1)
+        {
+            vetorDado[0]++;
+        }
+        else if (numeroSorteado == 2)
+        {
+            vetorDado[1]++;
+        }
+        else if (numeroSorteado == 3)
+        {
+            vetorDado[2]++;
+        }
+        else if (numeroSorteado == 4)
+        {
+            vetorDado[3]++;
+        }
+        else if (numeroSorteado == 5)
+        {
+            vetorDado[4]++;
+        }
+        else
+        {
+            vetorDado[5]++;
+        }
+    }
+
+    int percentualDado[SIZE];
+    printf("Porcentagem do total de jogadas:\n");
+    for (int i = 0; i < SIZE; i++)
+    {
+        percentualDado[i] = (vetorDado[i] * 100 / nVezes);
+        printf("Numero %d: %d%%\n",i + 1,percentualDado[i]);
+    }
+    return 0;
 }
-percentagemDados(qntdDado,d1,d2,d3,d4,d5,d6);
-return 0;
-}
+
 int sorteioDado()
 {
-    int numbSorteado = 1 + rand() % 6;
-    return numbSorteado;
-}
-void percentagemDados(int qnt,int numb1,int numb2,int numb3,int numb4,int numb5,int numb6)
-{
-    
-
-
+    int numeroDado = 1 + (rand() % 6);
+    return numeroDado;
 }
