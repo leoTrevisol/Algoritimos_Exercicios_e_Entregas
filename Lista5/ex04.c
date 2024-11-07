@@ -29,7 +29,7 @@ int main()
     while (count)
     {
         int count2 = 1, option;
-        int *vetorDiasSemana = malloc(SIZE * sizeof(int *));
+        int *vetorDiasSemana = malloc(SIZE * sizeof(int));
         char nomeDias[SIZE][4] = {"SEG", "TER", "QUA", "QUI", "SEX", "SAB", "DOM"};
 
         while (count2)
@@ -81,10 +81,8 @@ int main()
                 count = 0;
             }
         }
+        free(vetorDiasSemana);
     }
-    
-        free(*vetorDiasSemana);
-
     
     return 0;
 }
