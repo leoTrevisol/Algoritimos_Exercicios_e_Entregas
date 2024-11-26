@@ -23,58 +23,66 @@ f. Informe qual jogador venceu, ou se houve empate (o jogador com a maior pontua
 #include <time.h>
 
 #define RODADAS 5
+#define JOGADORES 4
 
-struct player
-{
-    char playerName[50];
-    char playerTag[3];
-};
-
+int sorteioPontos();
 int main()
 {
-
-    int count = 1;
-
-    while (count)
+    srand(time(0));
+    int pontuacaoJogadores[JOGADORES] = {0,0,0,0};
+    printf("JOGO DOS PONTOS.\nPresione ENTER para iniciar.\n");
+    getchar();
+    for (int i = 0; i < RODADAS; i++)
     {
-        int option;
-        int qntPlayers;
-        printf("Jogo dos Pontos!\n1.Iniciar\n2.Sair\n");
-        scanf("%d", &option);
-        if (option != 1 && option != 2)
+        int number[JOGADORES] = {0,0,0,0};
+        for (int i = 0; i < JOGADORES; i++)
         {
-            printf("Opcao invalida!Tente novamente.\n");
+            number[i] = sorteioPontos();
+            pontuacaoJogadores[i] += number[i];
+             
         }
-        else if (option == 1)
+        printf("Rodada %d:\n",i + 1);
+        for (int i = 0; i < JOGADORES; i++)
         {
-            int count2 = 1;
-            while (count2)
+            printf("P%d: %d ",i + 1,pontuacaoJogadores[i]);
+        }
+        printf("\n");
+        for (int i = 0; i < JOGADORES; i++)
+        {
+            if (number[i] > 80)
             {
-                printf("Escolha a quantidade de jogadores(1 a 4): ");
-                scanf("%d ", &qntPlayers);
-                if (qntPlayers <= 0 && qntPlayers > 4)
-                {
-                    printf("Opcao invalida!Tente novamente.\n");
-                }
-                else
-                {
-                    int *somaPontos = malloc(qntPlayers* sizeof(int));
-                    for (int i = 0; i < qntPlayers; i++)
-                    {
-                        somaPontos[i] = 0;
-                    }
-                    printf("Digite o nome do player 1:");
-                    fgets()
-
-                    free(somaPontos);
-                }
+                printf("Rodada destaque: P%d - %d pontos.\n",i + 1,number[i]);
             }
+            
         }
-        else
+        
+        printf("\nPresione ENTER para continuar.\n");
+        getchar();
+    }
+
+    printf("PONTUACAO FINAL:\n");
+    for (int i = 0; i < JOGADORES; i++)
+    {
+        printf("Jogador %d: %d pontos.\n",i + 1,pontuacaoJogadores[i]);
+    }
+
+    int pontuacaoVencedor = 0,jogadorVencedor = 0;
+    for (int i = 0; i < JOGADORES; i++)
+    {
+        if (pontuacaoVencedor < pontuacaoJogadores[i])
         {
-            printf("Adeus!\n");
-            count = 0;
+            pontuacaoVencedor = pontuacaoJogadores[i];
+            jogadorVencedor = i + 1;
         }
-    }    
-    return 0;
+    }
+
+    printf("JOGADOR VENCEDOR: P%d - %d pontos.\nFIM.\n",jogadorVencedor,pontuacaoVencedor);
+    
+   return 0;
+}
+
+int sorteioPontos()
+{
+    int number = rand() % 101;
+    return number;
 }
