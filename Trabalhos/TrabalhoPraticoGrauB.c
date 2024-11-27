@@ -220,12 +220,12 @@ int main()
                                 {
                                     if (tipo[i].quantidade < 0)
                                     {
-
+                                        tipo[i].quantidade += potion[1].quantidades[i];
                                         printf("%s: necessario %d, disponivel %d.\n", tipo[i].nome, potion[1].quantidades[i], tipo[i].quantidade);
                                     }
                                     else
                                     {
-                                        tipo[i].quantidade += potion[0].quantidades[i];
+                                        tipo[i].quantidade += potion[1].quantidades[i];
                                     }
                                 }
                             }
@@ -266,12 +266,12 @@ int main()
                                 {
                                     if (tipo[i].quantidade < 0)
                                     {
-
+                                        tipo[i].quantidade += potion[2].quantidades[i];
                                         printf("%s: necessario %d, disponivel %d.\n", tipo[i].nome, potion[2].quantidades[i], tipo[i].quantidade);
                                     }
                                     else
                                     {
-                                        tipo[i].quantidade += potion[0].quantidades[i];
+                                        tipo[i].quantidade += potion[2].quantidades[i];
                                     }
                                 }
                             }
@@ -312,12 +312,12 @@ int main()
                                 {
                                     if (tipo[i].quantidade < 0)
                                     {
-
+                                        tipo[i].quantidade += potion[3].quantidades[i];
                                         printf("%s: necessario %d, disponivel %d.\n", tipo[i].nome, potion[3].quantidades[i], tipo[i].quantidade);
                                     }
                                     else
                                     {
-                                        tipo[i].quantidade += potion[0].quantidades[i];
+                                        tipo[i].quantidade += potion[3].quantidades[i];
                                     }
                                 }
                             }
@@ -358,12 +358,12 @@ int main()
                                 {
                                     if (tipo[i].quantidade < 0)
                                     {
-
+                                        tipo[i].quantidade += potion[4].quantidades[i];
                                         printf("%s: necessario %d, disponivel %d.\n", tipo[i].nome, potion[4].quantidades[i], tipo[i].quantidade);
                                     }
                                     else
                                     {
-                                        tipo[i].quantidade += potion[0].quantidades[i];
+                                        tipo[i].quantidade += potion[4].quantidades[i];
                                     }
                                 }
                             }
